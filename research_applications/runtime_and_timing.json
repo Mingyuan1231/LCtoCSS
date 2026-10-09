@@ -1,0 +1,49 @@
+{
+  "environment_recorded_at_utc": "2026-10-09T08:43:14.546627+00:00",
+  "operating_system": "Windows-10-10.0.19045-SP0",
+  "python": "3.12.14",
+  "implementation": "CPython",
+  "numpy": "2.3.5",
+  "cpu": "Intel Core i7-10700KF CPU @ 3.80GHz",
+  "physical_cores": 8,
+  "logical_processors": 16,
+  "execution": "Single Python process; no multiprocessing or GPU; scalar packed-integer recognition.",
+  "original_measurements": {
+    "date": "2026-10-09",
+    "exact_start_timestamps_recorded": false,
+    "pbb_screening": {
+      "seconds": 49.69448119994922,
+      "aggregation": "Sum of per-entry time.perf_counter intervals for 368 records.",
+      "includes": [
+        "Polynomial expansion",
+        "Full-input commutativity checks",
+        "Recognition and factor decomposition",
+        "Internal witness/contradiction checks",
+        "Comparison of rank to n-k",
+        "Input matrix hash and result metadata construction"
+      ],
+      "excludes": [
+        "Catalog file loading",
+        "Result JSONL serialization and file writes",
+        "Subsequent independent verification"
+      ],
+      "recognizer_script_sha256": "aec80a3f7dbe1a3c37f423369c1935579fee91029334112e197db7a1af2be106",
+      "core_sha256": "2534bccaab1aec74dc3a7ceccfe53ab6d0ad5b63ffd4f7d5db29eca158e67c93"
+    },
+    "xyz_recognition": {
+      "seconds": 0.6632408999939798,
+      "includes": [
+        "RREF and direct factors",
+        "Affine systems and branch elimination",
+        "Contradiction checks internal to the recognizer"
+      ],
+      "excludes": [
+        "Subset and Kronecker-product matrix construction",
+        "Independent verification",
+        "Output serialization and file writes"
+      ],
+      "script_sha256": "64164376bbd5625a069349c884ba48dc140e5f4271841e4c97a90c6833e38c74"
+    },
+    "interpretation": "Single measurements, not repeated performance benchmarks or measured exhaustive-search speedups."
+  }
+}

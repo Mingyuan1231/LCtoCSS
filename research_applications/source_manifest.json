@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/qiskit-community/qcode-discovery",
+  "commit": "db051c576f51c43d2bf9923b6a87033e7f88f0fe",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/qiskit-community/qcode-discovery/db051c576f51c43d2bf9923b6a87033e7f88f0fe/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "results/campaign7_publication_merged.jsonl",
+      "url": "https://raw.githubusercontent.com/qiskit-community/qcode-discovery/db051c576f51c43d2bf9923b6a87033e7f88f0fe/results/campaign7_publication_merged.jsonl",
+      "bytes": 387880,
+      "sha256": "c0197f0cb5e03bfc94215555ed0fbfefaa72d1c0e3fb89a31fc5045c5f7e25ba"
+    }
+  ]
+}
