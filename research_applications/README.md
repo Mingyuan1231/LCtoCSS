@@ -43,7 +43,7 @@ runs for every input; saved classifications are not silently reused.
 
 | File | Purpose |
 | --- | --- |
-| `screen_pbb_catalog.py` | PBB construction and certificate-producing recognition using `lc_css.py` |
+| `screen_pbb_catalog.py` | PBB construction and certificate-producing recognition using `lc_css` |
 | `check_xyz_is.py` | Subset and Kronecker-product construction, recognition, and verification |
 | `verify_pbb_certificates.py` | Independent matrix, factor, annihilator, and witness checks; standalone PBB verification |
 | `verify_all_certificates.py` | Independent verification of PBB and XYZ-IS certificates |
@@ -57,6 +57,6 @@ runs for every input; saved classifications are not silently reused.
 | `sources/` | Licensed PBB catalog and explicit XYZ subset tuples |
 
 [CERTIFICATES.md](CERTIFICATES.md) specifies coordinates and equation indices.
-[REPRODUCIBILITY_NOTE.md](../REPRODUCIBILITY_NOTE.md) describes constructions and
+[Reproducibility](../docs/REPRODUCIBILITY.md) describes constructions and
 timings. The certificates verify finite algebraic identities; the paper's
 two-branch theorem supplies their classification meaning.

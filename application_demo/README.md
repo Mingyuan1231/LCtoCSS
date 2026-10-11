@@ -57,5 +57,5 @@ commuting stabilizer group without minus identity.
 Parameters and distances come from Bravyi et al., Nature 627, 778 (2024),
 [arXiv:2308.07915v2](https://arxiv.org/html/2308.07915v2), Table 3. Distances and
 circuit-level thresholds are not measured here. The
-[reproducibility note](../REPRODUCIBILITY_NOTE.md) gives seeds, noise settings,
+[reproducibility note](../docs/REPRODUCIBILITY.md) gives seeds, noise settings,
 and timing scope.

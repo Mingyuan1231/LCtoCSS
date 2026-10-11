@@ -20,7 +20,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 import lc_css as core
-from reproducibility import output_directory
+from tools.reproducibility import output_directory
 import argparse
 
 CATALOG = HERE / 'sources/qcode_discovery/results/campaign7_publication_merged.jsonl'

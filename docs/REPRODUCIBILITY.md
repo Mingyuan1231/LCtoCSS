@@ -3,7 +3,7 @@
 This note documents the controlled BB recovery tests, published PBB and XYZ-IS
 classifications, independent certificate verification, and recorded runtimes in
 **Local Clifford equivalence to CSS codes: Polynomial-time recognition and
-conversion**. Paths below are relative to this software directory.
+conversion**. Commands and code paths below are relative to the repository root.
 
 ## Controlled BB recovery and decoder checks
 
@@ -11,11 +11,11 @@ The known positive inputs use the `[[72,12,6]]`, `[[144,12,12]]`, and
 `[[288,12,18]]` bivariate bicycle codes in Table 3 of
 [Bravyi et al., arXiv:2308.07915v2](https://arxiv.org/html/2308.07915v2).
 Their published distances are inherited by local Clifford conversion.
-The recognizer and signed conversion are implemented in `lc_css.py`.
+The recognizer and signed conversion are implemented in `lc_css/__init__.py`.
 The construction and decoder tests are implemented in
-[`application_demo/run_demo.py`](application_demo/run_demo.py), with the
+[`application_demo/run_demo.py`](../application_demo/run_demo.py), with the
 original run recorded in
-[`application_demo/results/summary.json`](application_demo/results/summary.json).
+[`application_demo/results/summary.json`](../application_demo/results/summary.json).
 
 For each size, native generator pairs are mixed as
 `(g_X,j, g_Z,j) -> (g_X,j*g_Z,j, g_Z,j)`, then each qubit receives an
@@ -72,7 +72,7 @@ recorded cutoffs are unresolved outcomes. Recognition timings for the
 same first-deformation inputs are retained in `summary.json`; a median over
 different inputs is not a matched timing measurement for the search input.
 
-See [`application_demo/README.md`](application_demo/README.md) for reproduction
+See [`application_demo/README.md`](../application_demo/README.md) for reproduction
 commands and its output options. Reruns write to `outputs/bb/` and require fresh output
 files; the distributed results are read-only.
 
@@ -111,15 +111,15 @@ Kronecker-product construction reproduces the same binary matrix.
 
 The source manifests record the versions and SHA-256 hashes:
 
-- [`research_applications/source_manifest.json`](research_applications/source_manifest.json)
-- [`research_applications/xyz_source_manifest.json`](research_applications/xyz_source_manifest.json)
+- [`research_applications/source_manifest.json`](../research_applications/source_manifest.json)
+- [`research_applications/xyz_source_manifest.json`](../research_applications/xyz_source_manifest.json)
 
 Each PBB certificate is associated with its catalog line and code identifier;
 the XYZ-IS record specifies its source equation and ordered subset tuples.
 Hashes of the reconstructed binary matrices bind these descriptions to the
 saved certificates. The complete correspondence is recorded in
-[`research_applications/results/input_certificate_map.json`](research_applications/results/input_certificate_map.json).
-[`CERTIFICATES.md`](research_applications/CERTIFICATES.md) specifies qubit and
+[`research_applications/results/input_certificate_map.json`](../research_applications/results/input_certificate_map.json).
+[`CERTIFICATES.md`](../research_applications/CERTIFICATES.md) specifies qubit and
 row ordering, binary packing, and equation indices.
 
 ## Independent certificate verification
@@ -142,13 +142,13 @@ $$
 The support of $\lambda$ is stored as the indices of equations whose sum is
 $0=1$. The verifier reconstructs these equations from $G_V$ and its ordinary
 annihilator, following the canonical ordering in
-[`CERTIFICATES.md`](research_applications/CERTIFICATES.md), and checks both
+[`CERTIFICATES.md`](../research_applications/CERTIFICATES.md), and checks both
 witnesses. The verification entry point imports no recognition routine and
 does not use the solver's elimination history. It independently checks all
 11 positive witnesses, 714 PBB branch certificates, and two XYZ-IS branch
 certificates against their inputs.
 
-From this software directory, run:
+From the repository root, run:
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -195,7 +195,7 @@ Python 3.12.14, and NumPy 2.3.5, in a single Python process.
 
 The PBB figure is the sum of the per-entry intervals. These are individual
 measured runs. The exact values, environment, and timing boundaries are retained
-in [`runtime_and_timing.json`](research_applications/runtime_and_timing.json).
+in [`runtime_and_timing.json`](../research_applications/runtime_and_timing.json).
 The independent verification report records its own run separately.
 
 Code hashes in recorded measurements identify the source used for those

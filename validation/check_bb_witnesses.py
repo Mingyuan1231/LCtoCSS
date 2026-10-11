@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'research_applications'))
-from reproducibility import report_output, save_report
+from tools.reproducibility import report_output, save_report
 from verify_pbb_certificates import verify_positive
 
 

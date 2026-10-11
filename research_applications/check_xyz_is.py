@@ -13,7 +13,7 @@ if not __debug__:
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from reproducibility import output_directory
+from tools.reproducibility import output_directory
 
 import argparse
 import hashlib

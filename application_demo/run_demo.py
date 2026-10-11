@@ -29,7 +29,7 @@ from lc_css import (
     recognize, rref, sign_tables, signed_product, split, transform_signs,
     verify_and_transport,
 )
-from reproducibility import output_directory
+from tools.reproducibility import output_directory
 
 HERE = Path(__file__).resolve().parent
 CASES = [(6, 6, (1, 2), 6), (12, 6, (1, 2), 12),
@@ -223,7 +223,7 @@ def main():
                "python": platform.python_version(), "platform": platform.platform(),
                "processor": platform.processor(), "arguments": {k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
                "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-               "core_sha256": hashlib.sha256((HERE.parent / "lc_css.py").read_bytes()).hexdigest(),
+               "core_sha256": hashlib.sha256((HERE.parent / "lc_css" / "__init__.py").read_bytes()).hexdigest(),
                "small_crosscheck_cases": small_count, "cases": []}
     for l, m, ay, distance in CASES:
         n = 2*l*m

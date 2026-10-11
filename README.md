@@ -17,7 +17,7 @@ Use Python 3.12. From the repository root:
 
 ```sh
 python -m pip install -r requirements.txt
-python check_release.py
+python tools/check_release.py
 python research_applications/verify_all_certificates.py
 ```
 
@@ -42,7 +42,8 @@ the general correctness and complexity results are proved in the paper.
 
 ## Use the recognizer
 
-Run Python from this directory, or add it to your Python module search path:
+Run Python from the repository root, or add the root to your Python module search
+path. The implementation is in the `lc_css/` package:
 
 ```python
 from lc_css import recognize
@@ -71,16 +72,19 @@ Programs using mathematical assertions reject `python -O` and `python -OO`.
 
 ## Repository guide
 
-- [Reproducibility](REPRODUCIBILITY_NOTE.md): constructions, seeds, timings, and commands.
-- [Published-code applications](research_applications/README.md): inputs and reruns.
-- [Certificate format](research_applications/CERTIFICATES.md): input identities and equation indices.
-- [Validation](validation/README.md): algorithm, graph, phase, sparsity, and rejection checks.
-- [Third-party notices](THIRD_PARTY_NOTICES.md): catalog provenance and license.
+| Directory | Contents |
+| --- | --- |
+| [`lc_css/`](lc_css/__init__.py) | Recognition and signed CSS conversion |
+| [`application_demo/`](application_demo/README.md) | BB examples, decoder interface, and recorded results |
+| [`research_applications/`](research_applications/README.md) | Published-code inputs, classifications, and independent verifiers; [certificate format](research_applications/CERTIFICATES.md) |
+| [`validation/`](validation/README.md) | Algorithm, graph, phase, sparsity, and rejection checks |
+| `docs/` | [Reproducibility](docs/REPRODUCIBILITY.md) and [third-party notices](docs/THIRD_PARTY_NOTICES.md) |
+| `tools/` | Release integrity checks and shared output utilities |
 
 Application `results/` directories contain the recorded evidence. Reruns write
 to ignored `outputs/` directories or an explicit external destination.
 Classification and BB reruns require fresh output files. `SHA256SUMS` identifies
-the distributed files; `python check_release.py` checks their integrity. The
+the distributed files; `python tools/check_release.py` checks their integrity. The
 software works independently of a manuscript checkout.
 
 Original code and documentation use the [MIT License](LICENSE). The bundled

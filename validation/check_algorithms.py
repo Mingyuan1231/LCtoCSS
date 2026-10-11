@@ -13,7 +13,7 @@ if not __debug__:
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from reproducibility import report_output, save_report
+from tools.reproducibility import report_output, save_report
 
 import hashlib
 import itertools
@@ -342,7 +342,7 @@ def main():
               "reference_transpose_witnesses_checked":rerun['positive_witnesses_verified'],
               "graph_cases":graphs,"phase_checks":phase_checks(),"triangle_signed_graph_witness_verified":True,
               "triangle_css_row_matrices":triangle_q,"triangle_graph_output":graph_decide(triangle),
-              "mismatches":0,"source_sha256":{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),HERE/'validation_reference.py',HERE/'cases.json',HERE.parent/'lc_css.py']}}
+              "mismatches":0,"source_sha256":{p.relative_to(HERE.parent).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__).resolve(),HERE/'validation_reference.py',HERE/'cases.json',HERE.parent/'lc_css/__init__.py']}}
     save_report(report, report_path)
     print(json.dumps(report,indent=2))
 

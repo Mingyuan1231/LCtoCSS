@@ -7,7 +7,7 @@ if not __debug__:
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from reproducibility import report_output, save_report
+from tools.reproducibility import report_output, save_report
 
 
 from collections import Counter, deque
